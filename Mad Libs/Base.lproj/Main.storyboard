@@ -76,13 +76,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fill in the words to complete the story" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zgQ-ZF-TRu">
-                                <rect key="frame" x="44" y="289" width="287" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rin-qw-CvC">
                                 <rect key="frame" x="69" y="318" width="237" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -101,16 +94,26 @@
                                 <rect key="frame" x="156" y="394" width="62" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Continue"/>
+                                <connections>
+                                    <action selector="nextWordButton:" destination="NV9-Bk-Zh8" eventType="touchUpInside" id="cLC-fC-mvg"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Veg-Wf-dNA">
-                                <rect key="frame" x="121" y="513" width="133" height="30"/>
+                                <rect key="frame" x="121" y="318" width="133" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Show me the story!"/>
                                 <connections>
-                                    <action selector="newStoryButton:" destination="NV9-Bk-Zh8" eventType="touchUpInside" id="eBc-q4-kVc"/>
+                                    <action selector="newStoryButton:" destination="NV9-Bk-Zh8" eventType="touchUpInside" id="T4U-Db-6Af"/>
                                     <segue destination="UDW-5w-z9l" kind="push" id="f0m-Wv-Phj"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fill in the words to complete the story" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zgQ-ZF-TRu">
+                                <rect key="frame" x="44" y="289" width="287" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -118,6 +121,7 @@
                     <connections>
                         <outlet property="newStoryButton" destination="Veg-Wf-dNA" id="OqB-cK-v2C"/>
                         <outlet property="nextWordButton" destination="SBQ-03-dfg" id="366-uk-eJA"/>
+                        <outlet property="upperLabel" destination="zgQ-ZF-TRu" id="r4u-Dw-4pq"/>
                         <outlet property="wordsInputField" destination="Rin-qw-CvC" id="BkY-lK-G8e"/>
                         <outlet property="wordsLeftField" destination="aLC-hT-3zv" id="Gcb-Hr-5Sv"/>
                     </connections>
@@ -139,16 +143,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GvX-DV-kL4">
-                                <rect key="frame" x="16" y="198" width="343" height="271"/>
+                                <rect key="frame" x="16" y="74" width="343" height="271"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ivu-2q-6CH">
-                                <rect key="frame" x="121" y="477" width="133" height="30"/>
+                                <rect key="frame" x="121" y="353" width="133" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Create a new story!"/>
+                                <connections>
+                                    <action selector="createNewStory:" destination="UDW-5w-z9l" eventType="touchUpInside" id="Vlm-hg-TJ0"/>
+                                    <segue destination="bjK-1w-dqK" kind="push" id="B8k-I4-dj5"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -182,4 +190,7 @@
     <resources>
         <image name="madlibs" width="282" height="308"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="e2q-6Q-we3"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -13,24 +13,34 @@ class WordViewController: UIViewController {
     
     // Story
     var story: Story!
+    var text: String?
     
     // variables
     var contents: String?
     var storyNew = Story(stream: "")
     var countPlaceholder: Int?
+    var remainingWords: Int?
+    var nextPlaceholderType: String?
     
     // Outlets
+    
     @IBOutlet weak var newStoryButton: UIButton!
     @IBOutlet weak var wordsLeftField: UILabel!
     @IBOutlet weak var wordsInputField: UITextField!
     @IBOutlet weak var nextWordButton: UIButton!
     
+    // changing label to "all the words are filled in"
+    @IBOutlet weak var upperLabel: UILabel!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // hide button untill all words have been filled in
+        // hide to story button untill all words have been filled in
         newStoryButton.isHidden = true
+        
+        // hide continue button unless word is filled in
+        //nextWordButton.isHidden = true
         
         // get new story
         let array = ["/madlib0_simple", "/madlib1_tarzan", "/madlib2_university", "/madlib3_clothes", "/madlib4_dance"]
@@ -41,24 +51,59 @@ class WordViewController: UIViewController {
         // set story
         storyNew = Story(stream: contents)
         print(contents)
+        
+        // update fields
+        countPlaceholder = storyNew.getPlaceholderRemainingCount()
+        print(countPlaceholder! as Int)
+        wordsLeftField.text = "\(String(describing: countPlaceholder!)) word(s) left"
+        nextPlaceholderType = storyNew.getNextPlaceholder()
+        wordsInputField.placeholder = "Fill in a(n) \(nextPlaceholderType!)"
+    }
+    @IBAction func nextWordButton(_ sender: Any) {
+        if countPlaceholder == 1 {
+            newStoryButton.isHidden = false
+            nextWordButton.isEnabled = false
+        }
+        if wordsInputField.text!.isEmpty {
+            wordsInputField.placeholder = "Please fill in a(n) \(nextPlaceholderType!)"
+        }
+
+        else {
+            nextWordButton.isHidden = false
+            
+            if countPlaceholder! >= 1 {
+                countPlaceholder = countPlaceholder! - 1
+                wordsLeftField.text = "\(String(describing: countPlaceholder!)) word(s) left"
+                
+                // add word to story
+                storyNew.fillInPlaceholder(word: wordsInputField.text!)
+                print (wordsInputField.text!)
+                
+                // prepare for next word
+                nextPlaceholderType = storyNew.getNextPlaceholder()
+                wordsInputField.text?.removeAll()
+                
+                // if all the words are filled in
+                if countPlaceholder == 0 {
+                    // disable textfield
+                    upperLabel.text = "Jay! All the words are filled in!"
+                    wordsInputField.isHidden = true
+                    nextWordButton.isHidden = true
+                    wordsLeftField.isHidden = true
+                }
+                else {
+                  wordsInputField.placeholder = "Fill in a(n) \(nextPlaceholderType!)"
+                }
+            }
+        }
+    }
+    @IBAction func newStoryButton(_ sender: Any) {
+        text = storyNew.toString()
+        print(text!)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let textVC = segue.destination as? TextViewController {
+            textVC.text = text
+        }
     }
 }
-    
-    
-        //let randomIndex = Int(arc4random_uniform(UInt32(texts.count)))
-        // randomIndex picking from texts
-
-    // Variables
-        // stories to be chosen randomly
-        // placeholder for textField
-    
-
-    
-    
-    // Outlets
-
-    
-    // Actions
-    //@IBAction func nextWordButton(_ sender: UIButton) {
-        //
-    //}

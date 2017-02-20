@@ -21,4 +21,9 @@ class TextViewController: UIViewController {
         
         storyView.text = text
     }
+    @IBAction func createNewStory(_ sender: Any) {
+        // clear text
+        text = ""
+    }
+    
 }
