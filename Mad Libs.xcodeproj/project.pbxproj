@@ -19,6 +19,7 @@
 		F87DAE061E57282400C44BFA /* madlib4_dance.txt in Resources */ = {isa = PBXBuildFile; fileRef = F87DAE011E57282400C44BFA /* madlib4_dance.txt */; };
 		F87DAE081E57283300C44BFA /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87DAE071E57283300C44BFA /* Story.swift */; };
 		F87DAE0A1E5732EB00C44BFA /* WordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87DAE091E5732EB00C44BFA /* WordViewController.swift */; };
+		F87DAE101E5B3A6D00C44BFA /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87DAE0F1E5B3A6D00C44BFA /* TextViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		F87DAE011E57282400C44BFA /* madlib4_dance.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = madlib4_dance.txt; sourceTree = "<group>"; };
 		F87DAE071E57283300C44BFA /* Story.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
 		F87DAE091E5732EB00C44BFA /* WordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordViewController.swift; sourceTree = "<group>"; };
+		F87DAE0F1E5B3A6D00C44BFA /* TextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				F87DADEB1E57255B00C44BFA /* AppDelegate.swift */,
 				F87DADED1E57255B00C44BFA /* StartViewController.swift */,
 				F87DAE091E5732EB00C44BFA /* WordViewController.swift */,
+				F87DAE0F1E5B3A6D00C44BFA /* TextViewController.swift */,
 				F87DADEF1E57255B00C44BFA /* Main.storyboard */,
 				F87DADF21E57255B00C44BFA /* Assets.xcassets */,
 				F87DADF41E57255B00C44BFA /* LaunchScreen.storyboard */,
@@ -163,6 +166,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F87DAE101E5B3A6D00C44BFA /* TextViewController.swift in Sources */,
 				F87DADEE1E57255B00C44BFA /* StartViewController.swift in Sources */,
 				F87DADEC1E57255B00C44BFA /* AppDelegate.swift in Sources */,
 				F87DAE0A1E5732EB00C44BFA /* WordViewController.swift in Sources */,
