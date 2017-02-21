@@ -11,19 +11,15 @@ import Foundation
 
 class WordViewController: UIViewController {
     
-    // Story
-    //var story: Story!
-    var text: String?
-    
     // variables
     var contents: String?
     var storyNew = Story(stream: "")
     var countPlaceholder: Int?
     var remainingWords: Int?
     var nextPlaceholderType: String?
+    var text: String?
     
     // Outlets
-    
     @IBOutlet weak var newStoryButton: UIButton!
     @IBOutlet weak var wordsLeftField: UILabel!
     @IBOutlet weak var wordsInputField: UITextField!
@@ -46,11 +42,9 @@ class WordViewController: UIViewController {
         
         // set story
         storyNew = Story(stream: contents)
-        print(contents)
         
         // update count field with first placeholder
         countPlaceholder = storyNew.getPlaceholderRemainingCount()
-        print(countPlaceholder! as Int)
         wordsLeftField.text = "\(String(describing: countPlaceholder!)) word(s) left"
         
         // update text field with first placeholder
@@ -58,15 +52,16 @@ class WordViewController: UIViewController {
         wordsInputField.placeholder = "Fill in a(n) \(nextPlaceholderType!)"
     }
     @IBAction func nextWordButton(_ sender: Any) {
-        // last word
+        // if last word change button
         if countPlaceholder == 1 {
-            //newStoryButton.isHidden = false
             nextWordButton.setTitle("Finish", for: .normal)
         }
+        // if text-box is empty, ask nicely
         if wordsInputField.text!.isEmpty {
             wordsInputField.placeholder = "Please fill in a(n) \(nextPlaceholderType!)"
         }
 
+        // one or more words remaining
         else {
             nextWordButton.isHidden = false
             
@@ -78,18 +73,10 @@ class WordViewController: UIViewController {
                 
                 // add word to story
                 storyNew.fillInPlaceholder(word: wordsInputField.text!)
-                print (wordsInputField.text!)
                 
                 // prepare for next word
                 nextPlaceholderType = storyNew.getNextPlaceholder()
                 wordsInputField.text?.removeAll()
-                
-                if countPlaceholder == 1 {
-                    nextWordButton.setTitle("Finish", for: .normal)
-                    if wordsInputField.text!.isEmpty {
-                        wordsInputField.placeholder = "Please fill in a(n) \(nextPlaceholderType!)"
-                    }
-                }
                 
                 // if all the words are filled in
                 if countPlaceholder == 0 {
@@ -109,8 +96,8 @@ class WordViewController: UIViewController {
     }
     @IBAction func newStoryButton(_ sender: Any) {
         text = storyNew.toString()
-        print(text!)
     }
+    
     // sending text to TextViewController
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let textVC = segue.destination as? TextViewController {

@@ -8,11 +8,9 @@
 
 import UIKit
 
-
-
 class StartViewController: UIViewController {
     
-    
+    // outlets
     @IBOutlet weak var lowerView: UIView!
     @IBOutlet weak var logoView: UIImageView!
     
@@ -25,13 +23,14 @@ class StartViewController: UIViewController {
             self.lowerView.frame.origin.x = 0.5 * self.view.bounds.width
             self.lowerView.frame.origin.y = 64
             self.lowerView.frame.size.height = self.view.bounds.height
-            // Logo
+            // logo
             self.logoView.frame.origin.x = 0
             self.logoView.frame.origin.y = 64
             self.logoView.frame.size.width = 0.5 * self.view.bounds.width
             self.logoView.frame.size.height = self.view.bounds.height - 64
         }
-            // app is in portret view
+        
+        // app is in portret view
         else {
             // text + button
             self.lowerView.frame.size.height = 0.5 * self.view.bounds.height

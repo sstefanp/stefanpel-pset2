@@ -10,19 +10,20 @@ import UIKit
 
 class TextViewController: UIViewController {
     
-    //
-    
+    // receiving text from WordViewController
     var text: String?
     
     @IBOutlet weak var storyView: UITextView!
     
+    // present text to user
     override func viewDidLoad() {
         super.viewDidLoad()
         
         storyView.text = text
     }
+    
+    // creating new story, clearing text
     @IBAction func createNewStory(_ sender: Any) {
-        // clear text
         text = ""
     }
     
