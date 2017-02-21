@@ -75,52 +75,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rin-qw-CvC">
-                                <rect key="frame" x="16" y="318" width="343" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rin-qw-CvC">
+                                <rect key="frame" x="16" y="172" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aLC-hT-3zv">
-                                <rect key="frame" x="16" y="356" width="343" height="30"/>
+                                <rect key="frame" x="16" y="209" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SBQ-03-dfg">
-                                <rect key="frame" x="16" y="394" width="343" height="30"/>
+                                <rect key="frame" x="16" y="247" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Next word"/>
                                 <connections>
                                     <action selector="nextWordButton:" destination="NV9-Bk-Zh8" eventType="touchUpInside" id="cLC-fC-mvg"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fill in the words to complete the story" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zgQ-ZF-TRu">
+                                <rect key="frame" x="16" y="117" width="343" height="47"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Veg-Wf-dNA">
-                                <rect key="frame" x="16" y="318" width="343" height="30"/>
+                                <rect key="frame" x="16" y="209" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Show me the story!"/>
                                 <connections>
                                     <action selector="newStoryButton:" destination="NV9-Bk-Zh8" eventType="touchUpInside" id="T4U-Db-6Af"/>
                                     <segue destination="UDW-5w-z9l" kind="push" id="f0m-Wv-Phj"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fill in the words to complete the story" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zgQ-ZF-TRu">
-                                <rect key="frame" x="16" y="289" width="343" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="zgQ-ZF-TRu" firstAttribute="top" secondItem="RV4-DU-wuR" secondAttribute="bottom" constant="269" id="2ow-V8-25J"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="zgQ-ZF-TRu" secondAttribute="leading" id="63F-U2-Dtk"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Rin-qw-CvC" secondAttribute="trailing" id="P3Q-3f-uZC"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="zgQ-ZF-TRu" secondAttribute="trailing" id="d1P-Zp-YUi"/>
-                            <constraint firstItem="Rin-qw-CvC" firstAttribute="top" secondItem="zgQ-ZF-TRu" secondAttribute="bottom" constant="8" id="l5f-iO-BiZ"/>
-                            <constraint firstItem="Rin-qw-CvC" firstAttribute="width" secondItem="r3z-1g-DWm" secondAttribute="width" constant="-30" id="yek-uS-3zw"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="DGR-Lf-s4J"/>
                     <connections>
@@ -133,7 +129,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wNi-6Y-PvO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1364" y="134.48275862068968"/>
+            <point key="canvasLocation" x="1360.8" y="131.78410794602701"/>
         </scene>
         <!--Text View Controller-->
         <scene sceneID="6jm-Ih-EyR">
@@ -147,15 +143,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="GvX-DV-kL4">
-                                <rect key="frame" x="16" y="74" width="343" height="271"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="GvX-DV-kL4">
+                                <rect key="frame" x="16" y="149" width="343" height="368"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ivu-2q-6CH">
-                                <rect key="frame" x="16" y="353" width="343" height="30"/>
+                                <rect key="frame" x="16" y="584" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Create a new story!"/>
@@ -166,6 +161,12 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GvX-DV-kL4" firstAttribute="height" secondItem="eGj-wy-TYj" secondAttribute="height" id="Mtg-RE-nXd"/>
+                            <constraint firstItem="GvX-DV-kL4" firstAttribute="width" secondItem="eGj-wy-TYj" secondAttribute="width" constant="-30" id="ZBh-T4-ObP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="GvX-DV-kL4" secondAttribute="trailing" id="cNJ-3n-CHR"/>
+                            <constraint firstItem="GvX-DV-kL4" firstAttribute="top" secondItem="ZGd-a5-2Aj" secondAttribute="bottom" constant="129" id="f1w-6q-Yqz"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="V4T-0q-HbW"/>
                     <connections>
@@ -174,7 +175,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Da-8L-eFN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2117.5999999999999" y="135.38230884557723"/>
+            <point key="canvasLocation" x="2116" y="134.48275862068968"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7Ub-wL-xus">

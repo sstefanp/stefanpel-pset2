@@ -60,8 +60,8 @@ class WordViewController: UIViewController {
     @IBAction func nextWordButton(_ sender: Any) {
         // last word
         if countPlaceholder == 1 {
-            newStoryButton.isHidden = false
-            nextWordButton.isEnabled = false
+            //newStoryButton.isHidden = false
+            nextWordButton.setTitle("Finish", for: .normal)
         }
         if wordsInputField.text!.isEmpty {
             wordsInputField.placeholder = "Please fill in a(n) \(nextPlaceholderType!)"
@@ -84,6 +84,13 @@ class WordViewController: UIViewController {
                 nextPlaceholderType = storyNew.getNextPlaceholder()
                 wordsInputField.text?.removeAll()
                 
+                if countPlaceholder == 1 {
+                    nextWordButton.setTitle("Finish", for: .normal)
+                    if wordsInputField.text!.isEmpty {
+                        wordsInputField.placeholder = "Please fill in a(n) \(nextPlaceholderType!)"
+                    }
+                }
+                
                 // if all the words are filled in
                 if countPlaceholder == 0 {
                     // disable textfield and change label
@@ -91,6 +98,7 @@ class WordViewController: UIViewController {
                     wordsInputField.isHidden = true
                     nextWordButton.isHidden = true
                     wordsLeftField.isHidden = true
+                    newStoryButton.isHidden = false
                 }
                 else {
                     // update placeholder
